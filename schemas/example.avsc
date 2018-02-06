@@ -1,0 +1,55 @@
+{
+  "type": "record",
+  "name": "entry",
+  "namespace": "com.example.armedspidermonkey",
+  "doc": "This is an  fictitious record schema for random data generation",
+  "fields": [
+    {
+      "name": "id",
+      "doc": "TYPE 3 UUID",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "doc": "Probably a marvel character",
+      "type": "string"
+    },
+    {
+      "name": "currentDate",
+      "doc": "Timestamp (milliseconds since epoch)",
+      "type": { "type": "long", "logicalType": "timestamp-millis" }
+    },
+    {
+      "name": "someInt",
+      "doc": "int",
+      "type": "int"
+    },
+    {
+      "name": "someFloat",
+      "doc": "float",
+      "type": "float"
+    },
+    {
+      "name": "someDouble",
+      "doc": "double",
+      "type": "double"
+    },
+    {
+      "name": "somebool",
+      "doc": "boolean",
+      "type": "boolean"
+    },
+    { "name" : "Colors",
+      "doc" : "Colors supported by the palette.",
+      "type" : "enum",
+      "namespace" : "palette",
+      "symbols" : ["WHITE", "BLUE", "GREEN", "RED", "BLACK"]
+    },
+    {
+      "name":"someArray",
+      "type" : "array",
+      "items" : "string"
+    }
+
+  ]
+}
