@@ -14,6 +14,7 @@
 
 
 try:
+    import timeit
     from random import seed, randint
     import random
     import json
@@ -99,8 +100,10 @@ def genFakeDataFromSchema(inSchema):
     # print(newData)
     return newData
 
-
+totalRecords = 0
 # main loop/writer
+start = timeit.default_timer()
+
 for count in range(0, abs(args.NumberOfFiles)):
      curUUID = uuid.uuid4()
      writer = DataFileWriter(open(args.OutputPath + "/" + str(curUUID) + ".armed.spider.monkey.avro", "wb"), DatumWriter(), curSchema)
@@ -108,9 +111,13 @@ for count in range(0, abs(args.NumberOfFiles)):
      print("Generating %d records for %s" % (recordCount, str(curUUID)))
      for rec in range(0, recordCount):
          if rec % 10000 < 1:
-             print("%d of %d for %s" % (rec, recordCount, (curUUID)))
+             print("%d of %d records complete for %s file %d of %d" % (rec, recordCount, str(curUUID), count+1, args.NumberOfFiles))
          writer.append(genFakeDataFromSchema(curSchema))
+         totalRecords += 1
 
      writer.close()
 
-
+stop = timeit.default_timer()
+print("%d records generated in %.1f minutes" % (totalRecords, (stop - start)/60.0 ))
+recPerSec = totalRecords/float(stop - start)
+print("%.4f records per second" % recPerSec)
