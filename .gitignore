@@ -1,5 +1,6 @@
 #file system
 *DS_Store*
+./dataOutput/
 
 #IDE
 *.idea/*

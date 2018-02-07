@@ -7,48 +7,37 @@
     {
       "name": "id",
       "doc": "TYPE 3 UUID",
-      "type": "string"
+      "type": ["null","string"]
     },
     {
       "name": "username",
       "doc": "Probably a marvel character",
-      "type": "string"
-    },
-    {
-      "name": "currentDate",
-      "doc": "Timestamp (milliseconds since epoch)",
-      "type": { "type": "long", "logicalType": "timestamp-millis" }
+      "type": ["null","string"]
     },
     {
       "name": "someInt",
       "doc": "int",
-      "type": "int"
+      "type": ["null","int" ]
     },
     {
       "name": "someFloat",
       "doc": "float",
-      "type": "float"
+      "type": ["null","float"]
     },
     {
       "name": "someDouble",
       "doc": "double",
-      "type": "double"
+      "type": ["null","double"]
     },
     {
-      "name": "somebool",
+      "name": "someBool",
       "doc": "boolean",
-      "type": "boolean"
-    },
-    { "name" : "Colors",
-      "doc" : "Colors supported by the palette.",
-      "type" : "enum",
-      "namespace" : "palette",
-      "symbols" : ["WHITE", "BLUE", "GREEN", "RED", "BLACK"]
+      "type": ["null","boolean"]
     },
     {
-      "name":"someArray",
-      "type" : "array",
-      "items" : "string"
+      "name": "someString",
+      "doc": "string",
+      "type": ["null","string"]
     }
 
   ]
