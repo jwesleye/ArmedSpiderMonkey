@@ -1,3 +1,5 @@
+#! /Users/pls8208/anaconda3/bin/python
+
 # author James Etheredge
 
 # sample arguments
@@ -78,6 +80,7 @@ def getString(size=25, chars=string.ascii_uppercase + string.ascii_lowercase + s
 def genFakeDataFromSchema(inSchema):
     newData = {}
     for field in curSchema.fields:
+        print(field.type)
         if "name" in field.name.lower():
             newData[field.name] = getName()
         elif field.name.lower() == "id":
