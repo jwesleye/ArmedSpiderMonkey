@@ -10,7 +10,8 @@ SAMPLE execution:
                           --SchemaPath ./schemas/example.avsc
                           --OutputPath ./dataOutput`
 
-
+OR
+`python3.6 data_generator.py --MaxNumberOfElements 1 --MinNumberOfElements 1 --NumberOfFiles 1 --SchemaPath ./schemas/example.avsc --OutputPath ./dataOutput`
 #ISSUES
 
 *flat avro only, no nested data or lists
